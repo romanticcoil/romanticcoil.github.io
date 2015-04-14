@@ -17,8 +17,7 @@
 		direction:rtl;
 	}
 	#header_img,#sunset_img {
-		display:block;
-		margin-left: auto;
+		display:block; margin-left: auto;
 		margin-right: auto;
 	}
 	#header_img {
@@ -35,12 +34,27 @@
 		margin-right: auto;
 		width:15em;
 	}
+    .ripple-wrap {
+        position: relative;
+    }
+
+    .ripple-wrap canvas {
+        position: absolute;
+        z-index: 1;
+    }
+
+
 	</style>
+    <script src="scripts/ripple.js"></script>
 </head>
 <body>
 
 <div class="wrap_pic"><img id="header_img" src="pics/romantic.gif"/></div>
-<div class="wrap_pic"><img id="sunset_img" src="pics/sunset.jpg"/></div>
+<div class="wrap_pic">
+    <div class="ripple-wrap">
+        <img id="sunset_img" src="pics/sunset.jpg" onload="waterRipple(this);"/>
+    </div>
+</div>
 <div id="outer_text_block">
 <div id="inner_text_block">
 <p>
